@@ -27,6 +27,7 @@ metadata:
   annotations:
     inwinstack.com/allow-nat-policy: "true"
     inwinstack.com/allow-security-policy: "true"
+    inwinstack.com/allocated-public-ip: 140.110.134.99
   labels:
     app: ssh-app
   name: ssh-svc
@@ -34,8 +35,9 @@ metadata:
 spec:
   externalIPs:
   - 172.29.188.13
+  externalTrafficPolicy: Cluster
   ports:
   - port: 30
   selector:
     app: ssh-app
-  type: NodePort
+  type: LoadBalancer
