@@ -23,6 +23,7 @@ service nscd restart
 ```
 3. test
 ```shell=
+ldapsearch -xb '' -s base + -H ldap://172.19.79.84:1389
 getent passwd slurmuser
 ```
 ```shell=
